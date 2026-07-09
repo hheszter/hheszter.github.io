@@ -1,0 +1,310 @@
+:root {
+  color-scheme: light;
+  color: #1d2939;
+  background: #ffffff;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #f5f7fb;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.page {
+  width: 210mm;
+  max-width: 842px;
+  background: #ffffff;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(13, 38, 77, 0.12);
+  color: #0f172a;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+  border-bottom: 1px solid #dbe3ee;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+}
+
+.hero-right {
+  display: grid;
+  gap: 18px;
+  justify-items: end;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid #dbe3ee;
+}
+
+
+h1 {
+  margin: 0;
+  padding: 0.75em 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  color: #102a4b;
+}
+
+.subtitle {
+  margin: 1.75em 0 0;
+  max-width: 640px;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.contact-card {
+  padding: 18px 20px;
+  border: 1px solid #d1e3f2;
+  border-radius: 18px;
+  background: #f7fbff;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  text-align: right;
+}
+
+.contact-card a {
+  color: #1c66a9;
+  text-decoration: none;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+}
+
+.main-column {
+  min-width: 0;
+  border-right: 1px solid #d1e3f2;
+}
+
+.main-column section:last-child {
+  padding-top: 22px;
+  /* border-top: 1px solid #dbe3ee; */
+}
+
+.side-column {
+  display: grid;
+  gap: 18px;
+}
+
+section {
+  margin-bottom: 22px;
+}
+
+h2 {
+  margin: 1em 0 1.5em 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: #1c3b64;
+}
+
+p, li {
+  margin: 0;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.job, .education {
+  margin-bottom: 18px;
+}
+
+.job h3, .education h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  color: #102a4b;
+}
+
+.job-meta {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  color: #64748b;
+}
+
+ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.job ul li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.job ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  /* border-radius: 50%;a */
+  transform: rotate(-45deg);
+  background: transparent;
+  border-right: 2px solid #1f67a1;
+  border-bottom: 2px solid #1f67a1;
+}
+
+
+/* Skills list */
+ul.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.skill-list li {
+  margin-bottom: 8px;
+  padding-left: 0.75rem;
+  position: relative;
+}
+
+ul.skill-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1f67a1;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .page {
+    box-shadow: none;
+    margin: 0;
+    width: auto;
+    max-width: 100%;
+    padding: 18mm;
+  }
+
+  .contact-card {
+    border: 1px solid #d1e3f2;
+  }
+
+  .hero {
+    border-color: #c8d7e7;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 18mm;
+}
+
+@media (max-width: 840px) {
+  .page {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr 2fr;
+    justify-items: start;
+  }
+
+  .hero-right img.profile-photo {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+  }
+
+  .hero-right .contact-card {
+    width: 100%;
+  }
+
+  .contact-card {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     justify-content: center;
+  }
+
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  .main-column {
+    border-right: none;
+  }
+
+  /*list in line*/
+  ul.skill-list.line li {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-right: 20px;  
+    padding-left: 0;
+  }
+
+  ul.skill-list.line li::before {
+    display: none;
+  }
+
+  ul.skill-list.line li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 16px;
+    background: #1f67a1;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-right {
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 14px;
+  }
+
+  .hero-right .contact-card {
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .profile-photo {
+    width: 100%;
+    /* max-width: 300px; */
+    margin:0 auto;
+    height: auto;
+  }
+
+  
+}
