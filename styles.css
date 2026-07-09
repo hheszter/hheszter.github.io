@@ -190,7 +190,7 @@ ul.skill-list li::before {
   background: #1f67a1;
 }
 
-@media print {
+/* @media print {
   body {
     background: #ffffff;
     padding: 0;
@@ -211,7 +211,7 @@ ul.skill-list li::before {
   .hero {
     border-color: #c8d7e7;
   }
-}
+} */
 
 @page {
   size: A4;
@@ -307,4 +307,77 @@ ul.skill-list li::before {
   }
 
   
+}
+
+/*nyomtatás | PDF mentés*/
+.cv-actions {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+.cv-actions button {
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  color: #64748b;
+  border: 1px solid #64748b;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cv-actions button:hover {
+  background: #3d3d3d;
+  color: white;
+}
+
+/* @media print {
+  .cv-actions {
+    display: none;
+  }
+} */
+
+@media print {
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    background: white;
+  }
+
+  body {
+    padding: 0;
+    display: block;
+  }
+
+  .page {
+    width: 210mm;
+    max-width: none;
+    min-height: 297mm;
+    padding: 18mm;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .cv-actions {
+    display: none;
+  }
+
+  .grid-two {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .hero {
+    grid-template-columns: 1fr auto;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+
+  .job,
+  .education {
+    break-inside: avoid;
+  }
 }
