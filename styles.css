@@ -316,18 +316,19 @@ ul.skill-list li::before {
   margin: 5px;
 }
 
-.cv-actions button {
+.cv-actions a {
   font-size: 0.85rem;
   padding: 8px 18px;
-  color: #64748b;
   border: 1px solid #64748b;
   border-radius: 20px;
   background: transparent;
-  cursor: pointer;
+  color: #64748b;
   font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.cv-actions button:hover {
+.cv-actions a:hover {
   background: #3d3d3d;
   color: white;
 }
